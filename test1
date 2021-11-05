@@ -1,0 +1,37 @@
+#Code python :
+def dalmatienI(monChien):
+    
+    """
+    In :  list of list, tableau en bits 
+    Out : list of list, inverse du tableau en bits
+    """
+    
+    for i in range (len(monChien)):
+        
+        for x in range (len(monChien[i])):
+            if monChien[i][x] == 0:
+                monChien[i][x] = 1
+
+                
+            elif monChien[i][x]==1:
+                monChien[i][x] = 0
+                
+                
+    return monChien
+
+dalmatienI([[0,0,0],[1,0,1],[0,1,0]])
+
+##TESTS
+print('image de monChien inversée:',dalmatienI([[0,0,0],[1,0,1],[0,1,0]]))
+
+
+#RANDOM TESTS
+print(' ')
+print('------------------ TEST ALEATOIRE ------------------')
+print(' ')
+import random
+for alea in range (5):
+    a = random.randrange(1 ,10, 1)
+    invert = [[random.randrange(0 ,2, 1) for i in range(a)],[random.randrange(0 ,2, 1) for i in range(a)],[random.randrange(0 ,2, 1) for i in range(a)]]
+    print('une image aléatoire : ',invert)
+    print('son inverse :',dalmatienI(invert))
